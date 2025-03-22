@@ -1,0 +1,31 @@
+{
+  "name": "hrnet-modal-gbouly",
+  "version": "1.0.2",
+  "description": "Un composant modal simple et réutilisable pour React",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "babel src --out-dir dist",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "react",
+    "modal",
+    "component",
+    "hrnet"
+  ],
+  "author": "Guillaume Bouly",
+  "license": "ISC",
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.26.4",
+    "@babel/core": "^7.26.10",
+    "@babel/preset-env": "^7.26.9",
+    "@babel/preset-react": "^7.26.3"
+  },
+  "files": [
+    "dist"
+  ]
+}
