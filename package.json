@@ -1,7 +1,7 @@
 {
   "name": "hrnet-modal-gbouly",
-  "version": "1.0.2",
-  "description": "Un composant modal simple et réutilisable pour React",
+  "version": "1.0.3",
+  "description": "modal component",
   "main": "dist/index.js",
   "scripts": {
     "build": "babel src --out-dir dist",
@@ -10,8 +10,7 @@
   "keywords": [
     "react",
     "modal",
-    "component",
-    "hrnet"
+    "component"
   ],
   "author": "Guillaume Bouly",
   "license": "ISC",
