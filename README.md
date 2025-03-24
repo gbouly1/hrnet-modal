@@ -1,8 +1,6 @@
 # hrnet-modal
 
-> A simple React library for displaying modals with customizable styles. This Modal component can be used in any React application to display modal dialogs with overlay and a close button.
-> IDE : VSCode
-> Node version : 22.14
+> A simple React library for displaying modals with customizable styles. This Modal component can be used in any React application to display modal dialogs with overlay and a close button. |
 
 ## Install
 
@@ -61,3 +59,5 @@ export default App;
 | `title`    | String   | Yes      | Title displayed in the modal header         |
 | `children` | Node     | No       | Content to display in the modal body        |
 | `style`    | Object   | No       | Custom styles for the modal                 |
+
+> IDE : VSCode |Node version : 22.14
