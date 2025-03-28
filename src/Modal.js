@@ -85,28 +85,48 @@ const Modal = ({ isOpen, onClose, title, children, style = {} }) => {
 
   if (!isOpen) return null;
 
+  // Combine default styles with custom styles
+  const mergedOverlayStyle = {
+    ...modalStyles.overlay,
+    ...(style.overlay || {}),
+  };
+  const mergedContainerStyle = {
+    ...modalStyles.container,
+    ...(style.container || {}),
+  };
+  const mergedHeaderStyle = { ...modalStyles.header, ...(style.header || {}) };
+  const mergedTitleStyle = { ...modalStyles.title, ...(style.title || {}) };
+  const mergedCloseButtonStyle = {
+    ...modalStyles.closeButton,
+    ...(style.closeButton || {}),
+  };
+  const mergedContentStyle = {
+    ...modalStyles.content,
+    ...(style.content || {}),
+  };
+
   return (
-    <div style={modalStyles.overlay}>
+    <div style={mergedOverlayStyle}>
       <div
         ref={modalRef}
-        style={{ ...modalStyles.container, ...style.container }}
+        style={mergedContainerStyle}
         role="dialog"
         aria-modal="true"
         aria-labelledby="modal-title"
       >
-        <div style={modalStyles.header}>
-          <h2 id="modal-title" style={modalStyles.title}>
+        <div style={mergedHeaderStyle}>
+          <h2 id="modal-title" style={mergedTitleStyle}>
             {title}
           </h2>
           <button
-            style={modalStyles.closeButton}
+            style={mergedCloseButtonStyle}
             onClick={onClose}
             aria-label="Close"
           >
             &times;
           </button>
         </div>
-        <div style={modalStyles.content}>{children}</div>
+        <div style={mergedContentStyle}>{children}</div>
       </div>
     </div>
   );

@@ -97,25 +97,33 @@ var Modal = function Modal(_ref) {
     };
   }, [isOpen, onClose]);
   if (!isOpen) return null;
+
+  // Combine default styles with custom styles
+  var mergedOverlayStyle = _objectSpread(_objectSpread({}, modalStyles.overlay), style.overlay || {});
+  var mergedContainerStyle = _objectSpread(_objectSpread({}, modalStyles.container), style.container || {});
+  var mergedHeaderStyle = _objectSpread(_objectSpread({}, modalStyles.header), style.header || {});
+  var mergedTitleStyle = _objectSpread(_objectSpread({}, modalStyles.title), style.title || {});
+  var mergedCloseButtonStyle = _objectSpread(_objectSpread({}, modalStyles.closeButton), style.closeButton || {});
+  var mergedContentStyle = _objectSpread(_objectSpread({}, modalStyles.content), style.content || {});
   return /*#__PURE__*/_react["default"].createElement("div", {
-    style: modalStyles.overlay
+    style: mergedOverlayStyle
   }, /*#__PURE__*/_react["default"].createElement("div", {
     ref: modalRef,
-    style: _objectSpread(_objectSpread({}, modalStyles.container), style.container),
+    style: mergedContainerStyle,
     role: "dialog",
     "aria-modal": "true",
     "aria-labelledby": "modal-title"
   }, /*#__PURE__*/_react["default"].createElement("div", {
-    style: modalStyles.header
+    style: mergedHeaderStyle
   }, /*#__PURE__*/_react["default"].createElement("h2", {
     id: "modal-title",
-    style: modalStyles.title
+    style: mergedTitleStyle
   }, title), /*#__PURE__*/_react["default"].createElement("button", {
-    style: modalStyles.closeButton,
+    style: mergedCloseButtonStyle,
     onClick: onClose,
     "aria-label": "Close"
   }, "\xD7")), /*#__PURE__*/_react["default"].createElement("div", {
-    style: modalStyles.content
+    style: mergedContentStyle
   }, children)));
 };
 var _default = exports["default"] = Modal;
